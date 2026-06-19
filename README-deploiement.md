@@ -1,4 +1,4 @@
-# Clientea — déploiement du site sur Vercel
+# Klientea — déploiement du site sur Vercel
 
 Site statique (1 fichier `index.html` + `og-image.png`). Aucune compétence technique requise.
 
@@ -16,10 +16,10 @@ Site statique (1 fichier `index.html` + `og-image.png`). Aucune compétence tech
 4. Laisse les réglages par défaut (framework = « Other / Static »), clique **Deploy**.
 5. En ~30 s, ton site est en ligne sur une adresse `xxxx.vercel.app`.
 
-## 2. Brancher le domaine clientea.com
+## 2. Brancher le domaine klientea.com
 
-1. Achète **clientea.com** (chez Vercel : onglet **Domains**, ou chez un registrar comme OVH/Namecheap).
-2. Dans le projet Vercel → **Settings → Domains → Add** → tape `clientea.com`.
+1. Achète **klientea.com** (chez Vercel : onglet **Domains**, ou chez un registrar comme OVH/Namecheap).
+2. Dans le projet Vercel → **Settings → Domains → Add** → tape `klientea.com`.
 3. Suis les instructions DNS affichées (si acheté ailleurs, copie les enregistrements indiqués chez ton registrar). Vercel gère le HTTPS automatiquement.
 
 ## 3. Activer le formulaire « Réserver une démo »
@@ -30,7 +30,7 @@ Le formulaire fonctionne déjà en mode secours (il ouvre un e-mail pré-rempli)
 2. Ouvre `index.html`, cherche `VOTRE_CLE_WEB3FORMS` et remplace-le par ta clé.
 3. Redéploie (ou re-glisse le dossier). Les demandes arriveront par e-mail.
 
-> Remplace aussi l'adresse `contact@clientea.com` (dans `index.html`, pied de page + formulaire) par ton vraie adresse tant que l'e-mail du domaine n'est pas créé.
+> Remplace aussi l'adresse `contact@klientea.com` (dans `index.html`, pied de page + formulaire) par ton vraie adresse tant que l'e-mail du domaine n'est pas créé.
 
 ## 4. À personnaliser avant de communiquer dessus
 - Adresse e-mail de contact (2 endroits dans `index.html`).
@@ -39,4 +39,4 @@ Le formulaire fonctionne déjà en mode secours (il ouvre un e-mail pré-rempli)
 
 ## Bon à savoir
 - Le texte, les couleurs et les sections se modifient directement dans `index.html`.
-- L'image sociale (`og-image.png`) doit rester accessible à l'adresse `https://clientea.com/og-image.png` pour s'afficher dans les partages.
+- L'image sociale (`og-image.png`) doit rester accessible à l'adresse `https://klientea.com/og-image.png` pour s'afficher dans les partages.
