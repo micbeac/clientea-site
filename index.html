@@ -114,21 +114,6 @@
   @media(max-width:560px){.form-section{padding:30px 22px}}
   .form-section h2{font-size:clamp(24px,3.5vw,32px);text-align:center;margin-bottom:8px}
   .form-section .sub{text-align:center;color:var(--muted);margin-bottom:28px}
-  .field{margin-bottom:16px}
-  .field label{display:block;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px}
-  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  @media(max-width:520px){.row2{grid-template-columns:1fr}}
-  input,textarea{width:100%;font-family:inherit;font-size:15px;color:var(--text);
-    padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;transition:.15s}
-  input:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(14,115,97,.12)}
-  textarea{resize:vertical;min-height:90px}
-  .form-section .btn-primary{width:100%;justify-content:center;background:var(--accent);font-size:16px;padding:15px}
-  .form-section .btn-primary:hover{background:var(--accent-dark)}
-  .form-note{text-align:center;font-size:13px;color:var(--muted);margin-top:14px}
-  #formMsg{display:none;text-align:center;padding:14px;border-radius:10px;margin-top:16px;font-weight:600}
-  #formMsg.ok{display:block;background:rgba(14,115,97,.10);color:var(--accent-dark)}
-  #formMsg.err{display:block;background:#fdecec;color:#b42318}
-  .hp{position:absolute;left:-9999px}
 
   footer{border-top:1px solid var(--line);padding:40px 0;margin-top:20px}
   .foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
@@ -258,34 +243,11 @@
 
 <section class="block" id="demo">
   <div class="wrap">
-    <div class="form-section" style="margin-bottom:22px">
+    <div class="form-section">
       <h2>Réservez votre démo gratuite</h2>
       <p class="sub">Choisissez votre créneau ci-dessous — vous recevez le lien Zoom et une confirmation automatiquement.</p>
       <iframe src="https://api.leadconnectorhq.com/widget/booking/vFurjKFdeM2tzfojhiYT" id="bookingIframe" scrolling="no" style="width:100%;border:none;overflow:hidden;min-height:740px;border-radius:12px"></iframe>
       <p style="text-align:center;margin-top:10px"><a class="btn btn-ghost" href="https://api.leadconnectorhq.com/widget/booking/vFurjKFdeM2tzfojhiYT" target="_blank" rel="noopener">Ouvrir le calendrier en plein écran ↗</a></p>
-    </div>
-
-    <div class="form-section">
-      <h2>Vous préférez qu'on vous rappelle ?</h2>
-      <p class="sub">Laissez vos coordonnées, on revient vers vous rapidement.</p>
-      <form id="demoForm">
-        <input type="hidden" name="access_key" value="VOTRE_CLE_WEB3FORMS" />
-        <input type="hidden" name="subject" value="Nouvelle demande de démo — Klientea" />
-        <input type="hidden" name="from_name" value="Site Klientea" />
-        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
-        <div class="row2">
-          <div class="field"><label for="name">Nom</label><input id="name" name="name" required placeholder="Votre nom" /></div>
-          <div class="field"><label for="company">Société</label><input id="company" name="company" placeholder="Nom de l'entreprise" /></div>
-        </div>
-        <div class="row2">
-          <div class="field"><label for="phone">Téléphone</label><input id="phone" name="phone" type="tel" required placeholder="+32 ..." /></div>
-          <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" required placeholder="vous@exemple.be" /></div>
-        </div>
-        <div class="field"><label for="message">Votre activité / message (optionnel)</label><textarea id="message" name="message" placeholder="Ex : detailing automobile, 1 personne…"></textarea></div>
-        <button class="btn btn-primary" type="submit" id="submitBtn">Être rappelé</button>
-        <p class="form-note">Réponse sous 24 h ouvrées. Vos coordonnées ne sont jamais revendues.</p>
-        <div id="formMsg"></div>
-      </form>
     </div>
   </div>
 </section>
@@ -301,33 +263,6 @@
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
-  const form = document.getElementById('demoForm');
-  const msg = document.getElementById('formMsg');
-  const btn = document.getElementById('submitBtn');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    const key = data.get('access_key');
-    msg.className = ''; msg.textContent = '';
-    if (!key || key === 'VOTRE_CLE_WEB3FORMS') {
-      const body = `Nom: ${data.get('name')}%0ASociété: ${data.get('company')}%0ATéléphone: ${data.get('phone')}%0AE-mail: ${data.get('email')}%0AMessage: ${data.get('message')}`;
-      window.location.href = `mailto:contact@klientea.com?subject=Demande%20de%20démo%20Klientea&body=${body}`;
-      return;
-    }
-    btn.disabled = true; btn.textContent = 'Envoi…';
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST', headers: { 'Accept': 'application/json' }, body: data
-      });
-      const out = await res.json();
-      if (out.success) {
-        form.reset();
-        msg.className = 'ok'; msg.textContent = 'Merci ! On vous rappelle très vite.';
-      } else { throw new Error(out.message || 'Erreur'); }
-    } catch (err) {
-      msg.className = 'err'; msg.textContent = "Oups, l'envoi a échoué. Écrivez-nous à contact@klientea.com.";
-    } finally { btn.disabled = false; btn.textContent = 'Être rappelé'; }
-  });
 </script>
 <script src="https://api.leadconnectorhq.com/js/form_embed.js"></script>
 </body>
