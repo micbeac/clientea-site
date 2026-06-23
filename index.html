@@ -7,7 +7,6 @@
 <meta name="description" content="Klientea transforme vos appels entrants en rendez-vous confirmés, suivis et rentables : prise de rendez-vous par IA, confirmations, rappels et avis Google. Pour les pros du retail automobile." />
 <link rel="canonical" href="https://klientea.com/" />
 
-<!-- Open Graph / réseaux sociaux -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://klientea.com/" />
 <meta property="og:title" content="Klientea — Réceptionniste téléphonique IA" />
@@ -46,7 +45,6 @@
   .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
   .btn-ghost:hover{border-color:var(--ink)}
 
-  /* Header */
   header{position:sticky;top:0;z-index:30;background:rgba(250,250,247,.85);backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
@@ -58,7 +56,6 @@
   .nav-links a:hover{color:var(--ink)}
   @media(max-width:780px){.nav-links a:not(.btn){display:none}}
 
-  /* Hero */
   .hero{padding:90px 0 70px;text-align:center}
   .eyebrow{display:inline-block;font-size:13px;font-weight:600;color:var(--accent);
     background:rgba(14,115,97,.08);padding:6px 14px;border-radius:999px;margin-bottom:26px;letter-spacing:.01em}
@@ -67,7 +64,6 @@
   .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
   .trust{margin-top:30px;font-size:14px;color:var(--muted)}
 
-  /* Sections */
   section.block{padding:72px 0}
   .section-head{text-align:center;max-width:660px;margin:0 auto 50px}
   .section-head h2{font-size:clamp(26px,4vw,38px);margin-bottom:14px}
@@ -75,8 +71,7 @@
 
   .grid{display:grid;gap:20px}
   .grid-4{grid-template-columns:repeat(4,1fr)}
-  .grid-3{grid-template-columns:repeat(3,1fr)}
-  @media(max-width:860px){.grid-4{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:1fr}}
+  @media(max-width:860px){.grid-4{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:520px){.grid-4{grid-template-columns:1fr}}
 
   .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow)}
@@ -85,7 +80,6 @@
   .card h3{font-size:18px;margin-bottom:8px}
   .card p{font-size:15px;color:var(--muted)}
 
-  /* Steps */
   .steps{counter-reset:step}
   .step{display:flex;gap:20px;align-items:flex-start;padding:22px 0;border-bottom:1px solid var(--line)}
   .step:last-child{border-bottom:none}
@@ -95,7 +89,6 @@
   .step h3{font-size:19px;margin-bottom:4px}
   .step p{color:var(--muted)}
 
-  /* Detailing highlight */
   .feature{background:var(--ink);color:#dfe7ec;border-radius:22px;padding:48px;display:grid;
     grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
   @media(max-width:780px){.feature{grid-template-columns:1fr;padding:34px}}
@@ -108,7 +101,6 @@
   .pill{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#cfdae2;
     font-size:13px;padding:8px 13px;border-radius:999px}
 
-  /* Pricing teaser */
   .price{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:22px;
     padding:48px 30px;box-shadow:var(--shadow);max-width:680px;margin:0 auto}
   .price .amount{font-size:46px;font-weight:800;color:var(--ink);letter-spacing:-.03em}
@@ -117,7 +109,6 @@
   .price li{display:flex;gap:8px;align-items:center;color:var(--text);font-size:15px}
   .price li svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:2}
 
-  /* Form */
   .form-section{background:var(--panel);border:1px solid var(--line);border-radius:22px;
     padding:46px;box-shadow:var(--shadow);max-width:720px;margin:0 auto}
   @media(max-width:560px){.form-section{padding:30px 22px}}
@@ -139,7 +130,6 @@
   #formMsg.err{display:block;background:#fdecec;color:#b42318}
   .hp{position:absolute;left:-9999px}
 
-  /* Footer */
   footer{border-top:1px solid var(--line);padding:40px 0;margin-top:20px}
   .foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
   .foot .muted{color:var(--muted);font-size:14px}
@@ -261,18 +251,24 @@
         <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Agenda &amp; e-mails inclus</li>
         <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Mise en service accompagnée</li>
       </ul>
-      <a class="btn btn-primary" href="#demo">Demander un devis &amp; une démo</a>
+      <a class="btn btn-primary" href="#demo">Réserver ma démo</a>
     </div>
   </div>
 </section>
 
 <section class="block" id="demo">
   <div class="wrap">
-    <div class="form-section">
+    <div class="form-section" style="margin-bottom:22px">
       <h2>Réservez votre démo gratuite</h2>
-      <p class="sub">10 minutes pour voir l'IA prendre un vrai rendez-vous. On vous rappelle rapidement.</p>
+      <p class="sub">Choisissez votre créneau ci-dessous — vous recevez le lien Zoom et une confirmation automatiquement.</p>
+      <iframe src="https://api.leadconnectorhq.com/widget/booking/vFurjKFdeM2tzfojhiYT" id="bookingIframe" scrolling="no" style="width:100%;border:none;overflow:hidden;min-height:740px;border-radius:12px"></iframe>
+      <p style="text-align:center;margin-top:10px"><a class="btn btn-ghost" href="https://api.leadconnectorhq.com/widget/booking/vFurjKFdeM2tzfojhiYT" target="_blank" rel="noopener">Ouvrir le calendrier en plein écran ↗</a></p>
+    </div>
+
+    <div class="form-section">
+      <h2>Vous préférez qu'on vous rappelle ?</h2>
+      <p class="sub">Laissez vos coordonnées, on revient vers vous rapidement.</p>
       <form id="demoForm">
-        <!-- Remplacez la valeur ci-dessous par votre clé Web3Forms (voir README) -->
         <input type="hidden" name="access_key" value="VOTRE_CLE_WEB3FORMS" />
         <input type="hidden" name="subject" value="Nouvelle demande de démo — Klientea" />
         <input type="hidden" name="from_name" value="Site Klientea" />
@@ -286,7 +282,7 @@
           <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" required placeholder="vous@exemple.be" /></div>
         </div>
         <div class="field"><label for="message">Votre activité / message (optionnel)</label><textarea id="message" name="message" placeholder="Ex : detailing automobile, 1 personne…"></textarea></div>
-        <button class="btn btn-primary" type="submit" id="submitBtn">Réserver ma démo</button>
+        <button class="btn btn-primary" type="submit" id="submitBtn">Être rappelé</button>
         <p class="form-note">Réponse sous 24 h ouvrées. Vos coordonnées ne sont jamais revendues.</p>
         <div id="formMsg"></div>
       </form>
@@ -313,7 +309,6 @@
     const data = new FormData(form);
     const key = data.get('access_key');
     msg.className = ''; msg.textContent = '';
-    // Si la clé n'est pas configurée, on bascule sur un e-mail pré-rempli
     if (!key || key === 'VOTRE_CLE_WEB3FORMS') {
       const body = `Nom: ${data.get('name')}%0ASociété: ${data.get('company')}%0ATéléphone: ${data.get('phone')}%0AE-mail: ${data.get('email')}%0AMessage: ${data.get('message')}`;
       window.location.href = `mailto:contact@klientea.com?subject=Demande%20de%20démo%20Klientea&body=${body}`;
@@ -327,7 +322,13 @@
       const out = await res.json();
       if (out.success) {
         form.reset();
-        msg.className = 'ok'; msg.textContent = 'Merci ! Votre demande est bien reçue, on vous rappelle rapidement.';
+        msg.className = 'ok'; msg.textContent = 'Merci ! On vous rappelle très vite.';
       } else { throw new Error(out.message || 'Erreur'); }
     } catch (err) {
-      msg.className = 'err'; msg.textContent = "Oups, l'envoi a échoué. Écriv
+      msg.className = 'err'; msg.textContent = "Oups, l'envoi a échoué. Écrivez-nous à contact@klientea.com.";
+    } finally { btn.disabled = false; btn.textContent = 'Être rappelé'; }
+  });
+</script>
+<script src="https://api.leadconnectorhq.com/js/form_embed.js"></script>
+</body>
+</html>
